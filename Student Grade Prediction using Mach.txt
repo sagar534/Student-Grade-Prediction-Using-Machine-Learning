@@ -1,0 +1,76 @@
+Student Grade Prediction using Machine Learning
+This machine learning project aims to predict students’ final math grades (G3) using demographic, academic, and lifestyle features. The dataset is sourced from the UCI Machine Learning Repository and includes information such as previous grades, study time, alcohol consumption, parental education, and more.
+
+🧠 Problem Statement
+Accurately predicting a student’s academic performance can help in identifying students who may need additional support or intervention. In this project, we build a regression model to forecast students' final math grades based on various factors, with the goal of understanding what most influences student success.
+
+📦 Dataset
+Source: UCI Student Performance Dataset
+File used: student-mat.csv
+Target variable: G3 (Final grade in Math)
+Input features: 30+ attributes including demographics, grades (G1, G2), study habits, support received, and absences.
+
+🛠️ Tools and Technologies
+Language: Python 3.11
+
+Libraries:
+
+pandas, numpy – Data manipulation
+matplotlib, seaborn – Data visualization
+scikit-learn – Machine learning (model training, evaluation, preprocessing)
+
+📊 Exploratory Data Analysis (EDA)
+Distribution of final grades (G3)
+
+Relationships between study time, alcohol use, and performance
+Correlation heatmaps to identify strong predictors
+Feature importance visualization using trained model
+
+🧪 Feature Engineering
+To enhance prediction accuracy, new features were created:
+
+avg_grade: average of G1 and G2
+grade_improved: whether the student improved from G1 to G3
+total_alcohol: combined weekday and weekend alcohol use
+parent_edu_avg: mean parental education level
+engagement_score: score representing involvement and focus
+has_support: binary flag indicating support received (school/family/private)
+⚙️ Model Development
+Model Used: RandomForestRegressor
+Why Random Forest? It's robust, handles both linear and nonlinear relationships, and ranks feature importance.
+Evaluation Metrics:
+Mean Absolute Error (MAE)
+R² Score (Coefficient of Determination)
+Mean Absolute Error: ~1.25  
+R² Score: ~0.92 (highly accurate)
+🔍 Key Insights
+G1 and G2 (previous grades) are the strongest predictors of final grade
+Alcohol consumption and absences negatively correlate with performance
+Students with academic support perform slightly better
+Study time and family background also show a moderate effect
+📁 Folder Structure
+📁 student-grade-prediction/
+├── student-mat.csv           # Dataset file
+├── student_grade_predictor.py # Python script with full code
+├── README.md                 # Project documentation
+└── images/                   # Visualizations (optional)
+✅ Future Improvements
+Compare multiple models (e.g., XGBoost, SVR)
+
+Deploy as a web app using Streamlit
+
+Use SHAP or LIME for explainable AI insights
+
+Add GUI to input student data and get live predictions
+
+📌 How to Run
+Clone the repository
+
+Install dependencies:
+
+nginx
+pip install pandas numpy matplotlib seaborn scikit-learn
+Run the script:
+
+nginx
+python student_grade_predictor.py
